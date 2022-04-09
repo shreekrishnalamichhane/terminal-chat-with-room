@@ -96,4 +96,4 @@ This project is licensed under MIT License.
 
 Thank you for visiting. Make sure to try it out. If you love this project give it a star.
 
-[![star this repo](https://img.shields.io/github/stars/shreekrishnalamichhane/readme?color=rgb%28224%2C%2093%2C%2068%29&style=for-the-badge)](https://github.com/shreekrishnalamichhane/test)
+[![star this repo](https://img.shields.io/github/stars/shreekrishnalamichhane/terminal-chat-with-room?color=rgb%28224%2C%2093%2C%2068%29&style=for-the-badge)](https://github.com/shreekrishnalamichhane/test)
