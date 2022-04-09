@@ -149,11 +149,35 @@ io.sockets.on('connect', (socket) => {
                         break;
                     case 'help':
                         if (noOfArgs == 0) {
-                            fs.readFile('./src/help.html', 'utf8', (err, data) => socket.emit('system message', '', data));
+                            fs.readFile('./help.html', 'utf8', (err, data) => socket.emit('system message', '', data));
                         }
                         else
                             //if noOfArgs is else then, send the error.
                             sendCommandError(io, socket, 'text-danger', 'Command Error : No of arguments 0 expected, ' + noOfArgs + ' found. <br> Use /help to view all commands.')
+                        break;
+                    case 'name':
+                        //if noOfArgs is 0 then
+                        if (noOfArgs == 1) {
+                            // store new and old name in a variable.
+                            let name = {
+                                old: socket.user.name,
+                                new: msg[1]
+                            }
+                            // if new name is different than old name, then only
+                            if (name.old !== name.new) {
+                                // change the socket user
+                                socket.user.name = name.new;
+                                // emit rename event to the current room
+                                io.to(socket.user.room).emit('rename', socket.user, name);
+                            }
+                            else {
+                                //if noOfArgs is else then, send the error.
+                                sendCommandError(io, socket, 'text-danger', 'Argument Error : Please provide different name than your current name.')
+                            }
+                        }
+                        else
+                            //if noOfArgs is else then, send the error.
+                            sendCommandError(io, socket, 'text-danger', 'Command Error : No of arguments 1 expected, ' + noOfArgs + ' found. <br> Use /help to view all commands.')
                         break;
                     default:
                         break;

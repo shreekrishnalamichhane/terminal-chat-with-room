@@ -33,10 +33,10 @@ let setFocusOnDivWithId = (e) => {
     document.getElementById(e).scrollIntoView(scrollIntoViewOptions);
 };
 
-let updateUsername = (username) => {
-    localStorage.setItem('username', username);
-    user.name = username;
-    document.querySelector('.username_input').innerHTML = "🙍‍♂️ " + username;
+let updateUsername = (name) => {
+    updateLocalConfigValue('name', name);
+    user.name = name;
+    usernameInput.innerHTML = "🙍‍♂️ " + name;
 }
 
 let updateRoomId = (roomId) => {

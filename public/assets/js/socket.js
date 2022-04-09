@@ -12,10 +12,10 @@ let socketInit = (room) => {
         createTerminalSystemMessage(classs, msg, tag);
     })
     socket.on('room', (room) => {
-        console.log(room);
         updateLocalConfigValue('room', room);
         user.room = room;
         updateLocalInputRoomValue(room);
+        roomIdInput.innerHTML = "🔊 " + room;
     });
 
     console.log(user);
@@ -77,6 +77,20 @@ let socketInit = (room) => {
         let str = "/join " + roomId;
         navigator.clipboard.writeText(str);
         createTerminalSystemMessage(classs, 'Invite command copied to clipboard. <br> Room Id :' + roomId);
+    })
+
+    socket.on('rename', (sender, name) => {
+        //if the user is same as who requested the rename operation
+        if (user.name == name.old) {
+            //update the user name in all frontend aspects
+            updateUsername(name.new);
+            //display a terminal message to the user
+            createTerminalSystemMessage('text-warning', `Your name has been renamed from ${name.old} to ${name.new}.`)
+        } else {
+            //if the user is different than who requested the rename operation
+            //display a terminal message to the other users in the same room.
+            createTerminalSystemMessage('text-warning', `${name.old} has renamed themselves to ${name.new}.`)
+        }
     })
 
 
