@@ -1,3 +1,3 @@
-body.addEventListener('click', () => {
+document.addEventListener('click', () => {
     terminalInput.focus();
 });
