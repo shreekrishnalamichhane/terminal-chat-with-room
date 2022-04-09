@@ -86,7 +86,7 @@ Anyone can contribute me on this project. Check the [installation](#installation
 
 This project is licensed under MIT License.
 
-[![License: MIT](https://img.shields.io/packagist/l/shreekrishnalamichhane/readme?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/packagist/l/shreekrishnalamichhane/terminal-chat-with-room?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 ## Changelog
 
