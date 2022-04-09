@@ -32,7 +32,7 @@ This application uses the following libraries.
 You can clone the whole project.
 
 ```
-git clone ...
+git clone https://github.com/shreekrishnalamichhane/terminal-chat-with-room
 ```
 
 **OR**
