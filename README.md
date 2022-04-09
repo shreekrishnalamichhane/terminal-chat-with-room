@@ -62,7 +62,7 @@ npm start
 
 ## Demo
 
-Will be added later.
+Self Hosted Demo: [https://clichat.shreekrishnalamichhane.com.np/](https://clichat.shreekrishnalamichhane.com.np/)
 
 ## Tests
 
