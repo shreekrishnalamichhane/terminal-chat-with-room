@@ -1,0 +1,10 @@
+@font-face {
+  font-family: "Cascadia Code";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Cascadia Code"), url("./Cascadia.woff") format("woff");
+}
+@font-face {
+  font-family: "South Icon";
+  src: local("South Icon"), url("./Icons_South_St.ttf") format("ttf");
+}

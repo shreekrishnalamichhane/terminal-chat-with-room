@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal Chat</title>
+    <link href="./assets/fonts/font.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/utility.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="shortcut icon" href="./assets/favicon-light.png" type="image/x-icon">
+</head>
+
+<body class="background">
+    <div class="container d-flex flex-column gap-2 terminal_container">
+        <div class="terminal_wrapper d-flex flex-column gap-2">
+            <img src="./assets/icon-light.png" height="50px" width="50px" alt="">
+        </div>
+        <div class="d-flex flex-column gap-2">
+            <div class="d-flex gap-2 align-items-center" id="input_field">
+                <span class="background-orange text-complement username username_input"></span>
+                <span class="background-purple text-complement room room_input"></span>
+                <span class="terminal_input flex-fill"><input class="text-complement" type="text" autofocus=""></span>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="/assets/js/selector.js"></script>
+<script src="/assets/js/utility.js"></script>
+<script src="/assets/js/script.js"></script>
+<script src="/assets/js/socket/socket.io.min.js"></script>
+<script src="/assets/js/socket.js"></script>
+
+</html>

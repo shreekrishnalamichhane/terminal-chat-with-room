@@ -1,0 +1,32 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--primary-color);
+  font-family: "Cascadia Code", sans-serif;
+  margin-bottom: 15px;
+}
+
+.username {
+  padding: 2px 10px;
+  padding-left: 15px;
+  border-radius: 45px 0px 0px 45px;
+}
+.room {
+  padding: 2px 10px;
+  border-radius: 0px;
+}
+.terminal_message {
+  /* line-height: 15px; */
+}
+.terminal_input input {
+  outline: none;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  font-size: medium;
+  font-family: inherit;
+}
