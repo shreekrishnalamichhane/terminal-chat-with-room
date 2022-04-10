@@ -91,10 +91,10 @@ io.sockets.on('connect', (socket) => {
                         if (noOfArgs == 1) {
                             // if user is already in the room then leave that room first.
                             if (socket.user.room != null) {
-                                //leaving the current room
-                                socket.leave(socket.user.room);
                                 //sending the leave message to the room.
                                 io.to(socket.user.room).emit('leave', 'text-warning', socket.user, socket.user.room); //event , class, involved user, room to leave
+                                //leaving the current room
+                                socket.leave(socket.user.room);
                             }
                             //     /join [roomId]  so first arg is the roomId. 
                             socket.user.room = msg[1];
