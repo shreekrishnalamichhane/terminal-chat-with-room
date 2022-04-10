@@ -93,6 +93,11 @@ let socketInit = (room) => {
         user.sound = val;
     })
 
+    socket.on('cls', () => {
+        // remove everyting with "" to clear the screen.
+        terminalWrapper.innerHTML = "";
+    })
+
 
 }
 

@@ -210,6 +210,16 @@ io.sockets.on('connect', (socket) => {
                             sendCommandError(io, socket, 'text-danger', 'Command Error : No of arguments 1 expected, ' + noOfArgs + ' found. <br> Use /help to view all commands.')
                         }
                         break;
+
+                    case 'cls':
+                        //if noOfArgs is 0 then
+                        if (noOfArgs == 0) {
+                            socket.emit('cls');
+                        }
+                        else
+                            //if noOfArgs is else then, send the error.
+                            sendCommandError(io, socket, 'text-danger', 'Command Error : No of arguments 0 expected, ' + noOfArgs + ' found. <br> Use /help to view all commands.')
+                        break;
                     default:
                         //send the message to all the sockets in the room.
                         io.to(socket.user.room).emit('message', originalMessage, socket.user);

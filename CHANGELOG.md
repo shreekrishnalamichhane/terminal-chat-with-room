@@ -1,3 +1,14 @@
+#### V 1.4 - Screen Clear Command
+
+Sat, 10th April 2022 11:00 PM
+
+- **Commands**
+  - /cls
+- **Clear up the screen with /cls command**
+- **/help command preview's vertical padding increased for more readability**
+
+---
+
 #### V 1.3 - Message History
 
 Sat, 10th April 2022 9:00 PM
