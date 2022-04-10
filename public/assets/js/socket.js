@@ -1,7 +1,4 @@
 
-var user;
-var localUser;
-
 let socketInit = (room) => {
     var socket = io({
         query: {
@@ -91,6 +88,12 @@ let socketInit = (room) => {
             //display a terminal message to the other users in the same room.
             createTerminalSystemMessage('text-warning', `${name.old} has renamed themselves to ${name.new}.`)
         }
+    })
+
+    socket.on('sound', (val) => {
+        updateLocalConfigValue('sound', val);
+        user.sound = val;
+        console.log(user, val);
     })
 
 

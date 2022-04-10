@@ -6,15 +6,15 @@ let createTerminalSystemMessage = (classs, content, tag = 'span') => {
     setFocusOnDivWithId('input_field');
 }
 
-let createTerminalIncomingMessage = (classs, message, user) => {
+let createTerminalIncomingMessage = (classs, message, sender) => {
     terminalWrapper.innerHTML +=
         `<div class="terminal_message">
-            <span class="background-orange text-complement username ">🙍‍♂️ ${user.name}</span>
-            <span class="background-purple text-complement room ">🔊 ${user.room}</span>
+            <span class="background-orange text-complement username ">🙍‍♂️ ${sender.name}</span>
+            <span class="background-purple text-complement room ">🔊 ${sender.room}</span>
             <span class="${classs}"> ${message}</span>
         </div>`;
     setFocusOnDivWithId('input_field');
-
+    (user.sound == 'on') ? audio2.play() : "";
 }
 let createTerminalOutgoingMessage = (classs, message, user) => {
     terminalWrapper.innerHTML +=
@@ -23,8 +23,6 @@ let createTerminalOutgoingMessage = (classs, message, user) => {
             <span class="background-purple text-complement room ">🔊 ${user.room}</span>
             <span class="${classs}"> ${message}</span>
         </div>`;
-
-
     setFocusOnDivWithId('input_field');
 }
 

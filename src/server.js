@@ -70,6 +70,7 @@ io.sockets.on('connect', (socket) => {
     });
 
     socket.on('message', (msg) => {
+        let originalMessage = msg;
         try {
             //check for the command message by checking '/' in the first position
             if (msg[0] === '/') {
@@ -79,7 +80,7 @@ io.sockets.on('connect', (socket) => {
                 // -1  is done to discard the first command word.
                 noOfArgs = msg.length - 1;
                 //extracting command word
-                let command = msg[0].substring(1);
+                let command = msg[0].substring(1).toLowerCase();
                 switch (command) {
                     case 'version':
                         if (noOfArgs == 0) socket.emit('system message', 'text-pink', 'Current version : ' + process.env.VERSION);
@@ -179,14 +180,46 @@ io.sockets.on('connect', (socket) => {
                             //if noOfArgs is else then, send the error.
                             sendCommandError(io, socket, 'text-danger', 'Command Error : No of arguments 1 expected, ' + noOfArgs + ' found. <br> Use /help to view all commands.')
                         break;
+
+                    case 'sound':
+                        //if noOfArgs is 1 then
+                        if (noOfArgs == 1) {
+                            // convert the argument to lowercase
+                            let val = msg[1].toLowerCase();
+                            //if val is 'on'
+                            if (val == 'on') {
+                                //emit the 'on' sound event
+                                socket.emit('sound', 'on');
+                                //emit system notification
+                                socket.emit('system message', 'text-white', 'Sound Notification has been turned on.');
+                            }
+                            //if val is 'off'
+                            else if (val == 'off') {
+                                //emit the 'off' sound event
+                                socket.emit('sound', 'off');
+                                //emit system notification
+                                socket.emit('system message', 'text-white', 'Sound Notification has been turned off.');
+                            }
+                            else {
+                                //if val is else, then send argument error.
+                                sendCommandError(io, socket, 'text-danger', `Argument error : Possible value are 'on' or 'off. <br> Use /help to view all commands.`)
+                            }
+                        }
+                        else {
+                            //if noOfArgs is else then, send the error.
+                            sendCommandError(io, socket, 'text-danger', 'Command Error : No of arguments 1 expected, ' + noOfArgs + ' found. <br> Use /help to view all commands.')
+                        }
+                        break;
                     default:
+                        //send the message to all the sockets in the room.
+                        io.to(socket.user.room).emit('message', originalMessage, socket.user);
                         break;
                 }
             }
             // if the message is not a command, i.e, first letter in the message is not '/'.
             else {
                 //send the message to all the sockets in the room.
-                io.to(socket.user.room).emit('message', msg, socket.user);
+                io.to(socket.user.room).emit('message', originalMessage, socket.user);
             }
         } catch (error) {
 
