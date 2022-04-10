@@ -5,6 +5,7 @@ const server = http.createServer(app);
 const { Server } = require("socket.io");
 
 const fs = require('fs');
+const path = require('path');
 const { sendCommandError, randomSocketId } = require('./helper');
 
 require('dotenv').config();
@@ -150,7 +151,7 @@ io.sockets.on('connect', (socket) => {
                         break;
                     case 'help':
                         if (noOfArgs == 0) {
-                            fs.readFile('./help.html', 'utf8', (err, data) => socket.emit('system message', '', data));
+                            fs.readFile(path.join(__dirname, './help.html'), 'utf8', (err, data) => socket.emit('system message', '', data));
                         }
                         else
                             //if noOfArgs is else then, send the error.
