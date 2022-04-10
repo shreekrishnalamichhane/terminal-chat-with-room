@@ -1,3 +1,12 @@
+#### V 1.3 - Message History
+
+Sat, 10th April 2022 9:00 PM
+
+- **Up `🠕` key and Down `🠗` key for message history**
+- **History Length is 20**
+
+---
+
 #### V 1.2 - Message Sound Notification
 
 Sat, 10th April 2022 9:00 AM
