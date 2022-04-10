@@ -15,10 +15,8 @@ let socketInit = (room) => {
         roomIdInput.innerHTML = "🔊 " + room;
     });
 
-    console.log(user);
     socket.emit('authenticate', user);
     socket.on('authenticate', (name) => {
-        console.log('running');
         updateLocalInputNameValue(name);
     });
 
@@ -29,16 +27,17 @@ let socketInit = (room) => {
     terminalInput.addEventListener('keyup', (event) => {
         if (event.keyCode === 13 && event.target.value != '') {
             socket.emit('message', event.target.value);
+            createTerminalOutgoingMessage('text-outgoing', event.target.value, user);
             setFocusOnDivWithId('input_field');
             event.target.value = "";
         }
     });
 
     socket.on('message', (msg, sender) => {
-        if (sender.name == user.name)
-            createTerminalOutgoingMessage('text-outgoing', msg, sender);
-        else
+        if (sender.name != user.name)
             createTerminalIncomingMessage('text-incoming', msg, sender);
+        // else
+        // createTerminalOutgoingMessage('text-outgoing', msg, sender);
     });
 
     socket.on('system message', (classs, msg) => {
@@ -46,7 +45,6 @@ let socketInit = (room) => {
     });
 
     socket.on('join', (classs, sender) => {
-        console.log(sender);
         if (user.name == sender.name) {
             createTerminalSystemMessage(classs, 'You joined the room : ' + sender.room);
             updateLocalConfigValue('room', sender.room);
@@ -93,7 +91,6 @@ let socketInit = (room) => {
     socket.on('sound', (val) => {
         updateLocalConfigValue('sound', val);
         user.sound = val;
-        console.log(user, val);
     })
 
 
@@ -103,7 +100,6 @@ let init = () => {
     localUser = localStorage.getItem('user');
     if (localUser != null) {
         user = JSON.parse(localStorage.getItem('user'))
-        // console.log(user);
         socketInit(user.room);
     }
     else {
@@ -113,7 +109,6 @@ let init = () => {
         };
         localStorage.setItem('user', JSON.stringify(user));
         init();
-        // console.log(user);
     }
 }
 init();
