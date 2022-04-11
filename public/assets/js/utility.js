@@ -9,7 +9,7 @@ let createTerminalSystemMessage = (classs, content, tag = 'span') => {
 let createTerminalIncomingMessage = (classs, message, sender) => {
     terminalWrapper.innerHTML +=
         `<div class="terminal_message">
-            <span class="background-orange text-complement username ">🙍‍♂️ ${sender.name}</span>
+            <span class="background-pink text-complement username ">🙍‍♂️ ${sender.name}</span>
             <span class="background-purple text-complement room ">🔊 ${sender.room}</span>
             <span class="${classs}"> ${message}</span>
         </div>`;
