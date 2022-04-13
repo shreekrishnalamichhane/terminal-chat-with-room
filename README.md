@@ -62,6 +62,10 @@ npm start
 
 ## Demo
 
+<img src="./readme/clichat-shreekrishnalamichhane-com-np.png" width="100%" height="auto">
+<br>
+<br>
+
 Self Hosted Demo: [https://clichat.shreekrishnalamichhane.com.np/](https://clichat.shreekrishnalamichhane.com.np/)
 
 ## Tests
