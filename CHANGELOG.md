@@ -1,3 +1,11 @@
+#### V 1.5 - Arrow added at terminal blocks
+
+Thu, 14th April 2022 10:00 PM
+
+- **Arrow signs implemented at termial blocks**
+
+---
+
 #### V 1.4 - Screen Clear Command
 
 Sat, 10th April 2022 11:00 PM

@@ -30,3 +30,54 @@ body {
   font-size: medium;
   font-family: inherit;
 }
+
+.arrow-div {
+  --height: 25px;
+  width: max-content;
+  height: var(--height);
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.arrow-div::after,
+.arrow-div::before {
+  --arrow-len: 20px;
+  position: absolute;
+  content: "";
+}
+
+.arr-left-front-username-incoming::after {
+  border-top: calc(var(--height) / 2) solid transparent;
+  border-bottom: calc(var(--height) / 2) solid transparent;
+  border-left: calc(var(--arrow-len)) solid var(--pink-color);
+  left: 100%;
+  z-index: 999999;
+}
+
+.arr-left-front-username-outgoing::after {
+  border-top: calc(var(--height) / 2) solid transparent;
+  border-bottom: calc(var(--height) / 2) solid transparent;
+  border-left: calc(var(--arrow-len)) solid var(--orange-color);
+  left: 100%;
+  z-index: 999999;
+}
+.arr-left-front-room::after {
+  border-top: calc(var(--height) / 2) solid transparent;
+  border-bottom: calc(var(--height) / 2) solid transparent;
+  border-left: calc(var(--arrow-len)) solid var(--purple-color);
+  left: 100%;
+  z-index: 999999;
+}
+
+.arr-left-back::before {
+  border-top: calc(var(--height) / 2) solid transparent;
+  border-bottom: calc(var(--height) / 2) solid transparent;
+  border-left: calc(var(--arrow-len)) solid var(--primary-color);
+  left: 0;
+  z-index: 99;
+}
+
+.arr-left-back {
+  padding-left: 30px;
+}

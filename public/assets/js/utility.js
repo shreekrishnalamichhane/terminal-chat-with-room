@@ -8,9 +8,11 @@ let createTerminalSystemMessage = (classs, content, tag = 'span') => {
 
 let createTerminalIncomingMessage = (classs, message, sender) => {
     terminalWrapper.innerHTML +=
-        `<div class="terminal_message">
-            <span class="background-pink text-complement username ">🙍‍♂️ ${sender.name}</span>
-            <span class="background-purple text-complement room ">🔊 ${sender.room}</span>
+        `<div class="terminal_message d-flex gap-4 align-items-center">
+            <div class="d-flex gap-2">
+                <span class="background-pink text-complement  arrow-div arr-left-front-username-incoming username username_input ">🙍‍♂️ ${sender.name}</span>
+                <span class="background-purple text-complement arrow-div arr-left-front-room arr-left-back room room_input">🔊 ${sender.room}</span>
+            </div>
             <span class="${classs}"> ${message}</span>
         </div>`;
     setFocusOnDivWithId('input_field');
@@ -18,9 +20,11 @@ let createTerminalIncomingMessage = (classs, message, sender) => {
 }
 let createTerminalOutgoingMessage = (classs, message, user) => {
     terminalWrapper.innerHTML +=
-        `<div class="terminal_message">
-            <span class="background-orange text-complement username ">🙍‍♂️ ${user.name}</span>
-            <span class="background-purple text-complement room ">🔊 ${user.room}</span>
+        `<div class="terminal_message d-flex gap-4 align-items-center">
+            <div class="d-flex gap-2">
+                <span class="background-orange text-complement  arrow-div arr-left-front-username-outgoing username username_input ">🙍‍♂️ ${user.name}</span>
+                <span class="background-purple text-complement arrow-div arr-left-front-room arr-left-back room room_input">🔊 ${user.room}</span>
+            </div>
             <span class="${classs}"> ${message}</span>
         </div>`;
     setFocusOnDivWithId('input_field');
