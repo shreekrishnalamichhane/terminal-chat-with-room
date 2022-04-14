@@ -10,8 +10,8 @@ let createTerminalIncomingMessage = (classs, message, sender) => {
     terminalWrapper.innerHTML +=
         `<div class="terminal_message d-flex gap-4 align-items-center">
             <div class="d-flex gap-2">
-                <span class="background-pink text-complement  arrow-div arr-left-front-username-incoming username username_input ">🙍‍♂️ ${sender.name}</span>
-                <span class="background-purple text-complement arrow-div arr-left-front-room arr-left-back room room_input">🔊 ${sender.room}</span>
+                <span class="background-pink text-complement d-flex gap-2 arrow-div arr-left-front-username-incoming username username_input ">🙍‍♂️ <span class="d-none d-md-block" > ${sender.name}</span></span>
+                <span class="background-purple text-complement d-flex gap-2 arrow-div arr-left-front-room arr-left-back room room_input">🔊 <span class="d-none d-md-block" > ${sender.room}</span></span>
             </div>
             <span class="${classs}"> ${message}</span>
         </div>`;
@@ -19,12 +19,11 @@ let createTerminalIncomingMessage = (classs, message, sender) => {
     (user.sound == 'on') ? audio2.play() : "";
 }
 let createTerminalOutgoingMessage = (classs, message, user) => {
-    console.log(user);
     terminalWrapper.innerHTML +=
         `<div class="terminal_message d-flex gap-4 align-items-center">
             <div class="d-flex gap-2">
-                <span class="background-orange text-complement  arrow-div arr-left-front-username-outgoing username username_input ">🙍‍♂️ ${user.name}</span>
-                <span class="background-purple text-complement arrow-div arr-left-front-room arr-left-back room room_input">🔊 ${user.room}</span>
+                <span class="background-orange text-complement d-flex gap-2 arrow-div arr-left-front-username-outgoing username username_input ">🙍‍♂️ <span class="d-none d-md-block" > ${user.name}</span></span>
+                <span class="background-purple text-complement d-flex gap-2 arrow-div arr-left-front-room arr-left-back room room_input">🔊 <span class="d-none d-md-block" > ${user.room}</span></span>
             </div>
             <span class="${classs}"> ${message}</span>
         </div>`;
@@ -39,13 +38,13 @@ let setFocusOnDivWithId = (e) => {
 let updateUsername = (name) => {
     updateLocalConfigValue('name', name);
     user.name = name;
-    usernameInput.innerHTML = "🙍‍♂️ " + name;
+    usernameInput.innerHTML = "🙍‍♂️ " + `<span class="d-none d-md-block">${name}</span>`;
 }
 
 let updateRoomId = (roomId) => {
     localStorage.setItem('roomId', roomId);
     user.roomId = roomId;
-    document.querySelector('.roomId_input').innerHTML = "🔊 " + roomId;
+    document.querySelector('.roomId_input').innerHTML = "🔊 " + `<span class="d-none d-md-block">${roomId}</span>`;
 }
 
 let randomNumber = () => {
@@ -60,9 +59,9 @@ let updateLocalConfigValue = (name, value) => {
 }
 
 let updateLocalInputRoomValue = (room) => {
-    roomIdInput.innerText = '🔊 ' + room;
+    roomIdInput.innerHTML = '🔊 ' + `<span class="d-none d-md-block">${room}</span>`;
 }
 
 let updateLocalInputNameValue = (name) => {
-    usernameInput.innerText = '🙍‍♂️ ' + name;
+    usernameInput.innerHTML = '🙍‍♂️ ' + `<span class="d-none d-md-block">${name}</span>`;
 }

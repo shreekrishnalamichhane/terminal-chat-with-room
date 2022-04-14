@@ -36,7 +36,7 @@ body {
   width: max-content;
   height: var(--height);
   position: relative;
-  display: grid;
+  /* display: flex; */
   place-items: center;
 }
 

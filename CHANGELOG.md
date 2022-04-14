@@ -1,3 +1,12 @@
+#### V 1.6 - Username and room are hidden at sm screens.
+
+Thu, 14th April 2022 10:50 PM
+
+- **Username and room name are hidden at sm screens**
+- **More utility classes related to responsive display are added at `utility.css`**
+
+---
+
 #### V 1.5 - Arrow added at terminal blocks
 
 Thu, 14th April 2022 10:00 PM
