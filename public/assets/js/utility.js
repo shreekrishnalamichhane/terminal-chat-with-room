@@ -19,6 +19,7 @@ let createTerminalIncomingMessage = (classs, message, sender) => {
     (user.sound == 'on') ? audio2.play() : "";
 }
 let createTerminalOutgoingMessage = (classs, message, user) => {
+    console.log(user);
     terminalWrapper.innerHTML +=
         `<div class="terminal_message d-flex gap-4 align-items-center">
             <div class="d-flex gap-2">
@@ -52,9 +53,10 @@ let randomNumber = () => {
 }
 
 let updateLocalConfigValue = (name, value) => {
-    let user = JSON.parse(localStorage.getItem('user'));
+    let u = JSON.parse(localStorage.getItem('user'));
+    u[name] = value;
     user[name] = value;
-    localStorage.setItem('user', JSON.stringify(user));
+    localStorage.setItem('user', JSON.stringify(u));
 }
 
 let updateLocalInputRoomValue = (room) => {
