@@ -66,7 +66,7 @@ npm start
 <br>
 <br>
 
-Self Hosted Demo: [https://clichat.shreekrishnalamichhane.com.np/](https://clichat.shreekrishnalamichhane.com.np/)
+Self Hosted Demo: [https://links.shreekrishnalamichhane.com.np/qFeCJ](https://links.shreekrishnalamichhane.com.np/qFeCJ)
 
 ## Tests
 
@@ -76,7 +76,7 @@ There are no test avaiable for this project.
 
 **Author Name** &nbsp; : &nbsp; Shree Krishna Lamichhane <br>
 **Author URI** &nbsp; &nbsp; &nbsp; : &nbsp; [shreekrishnalamichhane.com.np](https://shreekrishnalamichhane.com.np) <br>
-**GitHub URI** &nbsp; &nbsp; &nbsp; : &nbsp; [shreekrishnalamichhane](https://github.com/shreekrishnalamichhane)
+**GitHub URI** &nbsp; &nbsp; &nbsp; : &nbsp; [shreekrishnalamichhane](https://github.shreekrishnalamichhane.com.np)
 
 ## Contributors
 
