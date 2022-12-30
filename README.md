@@ -75,7 +75,7 @@ There are no test avaiable for this project.
 ## Author
 
 **Author Name** &nbsp; : &nbsp; Shree Krishna Lamichhane <br>
-**Author URI** &nbsp; &nbsp; &nbsp; : &nbsp; [shreekrishnalamichhane.com.np](https://shreekrishnalamichhane.com.np) <br>
+**Author URI** &nbsp; &nbsp; &nbsp; : &nbsp; [shreekrishnalamichhane.com.np](https://site.shreekrishnalamichhane.com.np) <br>
 **GitHub URI** &nbsp; &nbsp; &nbsp; : &nbsp; [shreekrishnalamichhane](https://github.shreekrishnalamichhane.com.np)
 
 ## Contributors
